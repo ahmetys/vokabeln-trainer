@@ -5,7 +5,8 @@ const app = express();
 const port = 3000;
 const path = require("path");
 const axios = require("axios");
-
+require("dotenv").config();
+const apiKey = process.env.API_KEY;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
@@ -17,7 +18,7 @@ app.post("/", cors(), (req, res) => {
   axios
     .get(`https://api.pons.com/v1/dictionary?q=${encodeURIComponent(req.body.searchTerm)}&l=detr`, {
       headers: {
-        "X-Secret": "43df1e52b521b8536ed3e495e9fff86b177a610e8f5373fb43a7c3395e291b29",
+        "X-Secret": apiKey,
         "User-Agent": false,
       },
     })
