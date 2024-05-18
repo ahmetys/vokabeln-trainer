@@ -28,6 +28,7 @@ app.post("/", cors(), (req, res) => {
     })
     .catch((error) => {
       console.log(error);
+      res.send(error);
     });
 });
 app.listen(port, () => {

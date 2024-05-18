@@ -1,9 +1,9 @@
-import HomeSearchInput from "../components/HomeSearchInput";
+import Search from "../components/Search";
 
 function Home() {
   return (
     <div className="tab-pane show active">
-      <HomeSearchInput></HomeSearchInput>
+      <Search></Search>
     </div>
   );
 }
