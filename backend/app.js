@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -5,7 +6,6 @@ const app = express();
 const port = 3000;
 const path = require("path");
 const axios = require("axios");
-require("dotenv").config();
 const apiKey = process.env.API_KEY;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -15,6 +15,7 @@ app.get("/", (req, res) => {
   res.send("Hellos Worsld!");
 });
 app.post("/", cors(), (req, res) => {
+  console.log(req.body);
   axios
     .get(`https://api.pons.com/v1/dictionary?q=${encodeURIComponent(req.body.searchTerm)}&l=detr`, {
       headers: {
@@ -23,7 +24,6 @@ app.post("/", cors(), (req, res) => {
       },
     })
     .then((response) => {
-      console.log(response.data);
       res.send(response.data);
     })
     .catch((error) => {

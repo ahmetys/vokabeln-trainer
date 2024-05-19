@@ -7,7 +7,7 @@ function Flags({ lang }) {
       {lang === "de" ? (
         <>
           <FlagIconDE />
-          »
+          <span>🡆</span>
           <FlagIconTR />
         </>
       ) : (
