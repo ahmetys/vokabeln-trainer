@@ -6,11 +6,12 @@ import "bootstrap/dist/js/bootstrap.bundle.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./assets/css/style.css";
 import { BrowserRouter } from "react-router-dom";
+import { WordListProvider } from "./WordListContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <WordListProvider>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>
+  </WordListProvider>
 );
