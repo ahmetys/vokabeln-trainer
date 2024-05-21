@@ -8,8 +8,8 @@ function TabMenu() {
         <NavLink className="nav-link" to="/">
           Startseite
         </NavLink>
-        <NavLink className="nav-link" to="/profile">
-          Profile
+        <NavLink className="nav-link" to="/cards">
+          Karten
         </NavLink>
         <NavLink className="nav-link" to="/contact">
           Contact

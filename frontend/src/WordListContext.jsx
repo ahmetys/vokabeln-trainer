@@ -10,7 +10,7 @@ export function WordListProvider({ children }) {
   }, [wordList]);
   return (
     <WordListContext.Provider value={wordList}>
-      <WordListDispatchContext.Provider value={dispatch}>{children}</WordListDispatchContext.Provider>;
+      <WordListDispatchContext.Provider value={dispatch}>{children}</WordListDispatchContext.Provider>
     </WordListContext.Provider>
   );
 }

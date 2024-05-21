@@ -47,4 +47,50 @@ body {
   font-size: 0.7em;
 }
 
+.trans {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 1s;
+}
+@keyframes example {
+  0% {
+    background-color: red;
+    right: -400px;
+  }
+  100% {
+    background-color: red;
+    right: 0px;
+  }
+}
+
+.word-card {
+  transition: rotate 0.5s ease-in-out;
+  transform-origin: center center;
+}
+
+.word-card1 {
+  rotate: x -90deg;
+  rotate: x 90deg;
+  transform-origin: center center;
+}
+
+.anime {
+  animation: turner 1s linear;
+}
+
+@keyframes turner {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

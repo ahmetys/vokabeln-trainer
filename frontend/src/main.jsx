@@ -7,6 +7,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./assets/css/style.css";
 import { BrowserRouter } from "react-router-dom";
 import { WordListProvider } from "./WordListContext.jsx";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <WordListProvider>
