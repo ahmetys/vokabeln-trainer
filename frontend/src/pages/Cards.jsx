@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Slider from "react-slick";
 import { useWordList } from "../WordListContext";
 import Card from "../components/Card";
@@ -14,6 +13,7 @@ function Cards() {
   };
 
   const wordList = useWordList();
+
   return (
     <div className="row slider-container py-2 m-0">
       <Slider arrows={false} {...settings}>

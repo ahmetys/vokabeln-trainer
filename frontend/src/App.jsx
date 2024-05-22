@@ -6,7 +6,7 @@ function App() {
     <>
       <div className="container p-0">
         <Header></Header>
-        <div className="tab-content" id="pills-tabContent">
+        <div className="tab-content app" id="pills-tabContent">
           <AppRoutes></AppRoutes>
         </div>
         <TabMenu></TabMenu>
