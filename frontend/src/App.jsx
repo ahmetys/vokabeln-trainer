@@ -4,9 +4,9 @@ import TabMenu from "./components/TabMenu";
 function App() {
   return (
     <>
-      <div className="container p-0">
+      <div className="container p-0 ">
         <Header></Header>
-        <div className="tab-content app" id="pills-tabContent">
+        <div className="tab-content app " id="pills-tabContent">
           <AppRoutes></AppRoutes>
         </div>
         <TabMenu></TabMenu>

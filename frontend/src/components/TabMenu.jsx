@@ -11,8 +11,8 @@ function TabMenu() {
         <NavLink className="nav-link" to="/cards">
           Karten
         </NavLink>
-        <NavLink className="nav-link" to="/contact">
-          Contact
+        <NavLink className="nav-link" to="/quiz">
+          Quiz
         </NavLink>
       </ul>
     </>
