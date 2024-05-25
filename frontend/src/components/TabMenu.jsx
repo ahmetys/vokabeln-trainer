@@ -6,7 +6,7 @@ function TabMenu() {
     <>
       <ul className="nav nav-pills d-flex justify-content-around bg-light fixed-bottom border-top py-2">
         <NavLink className="nav-link" to="/">
-          Startseite
+          Suche
         </NavLink>
         <NavLink className="nav-link" to="/cards">
           Karten

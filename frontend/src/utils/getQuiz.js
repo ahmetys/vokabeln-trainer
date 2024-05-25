@@ -5,9 +5,15 @@ const getQuiz = (array, limit) => {
 
   const createQuestion = () => {
     const questionIndex = getRandomIndex(filteredArray);
+
     const options = () => {
       let options = [];
-      options = [filteredArray[getRandomIndex(filteredArray)].target, filteredArray[getRandomIndex(filteredArray)].target, filteredArray[getRandomIndex(filteredArray)].target, filteredArray[getRandomIndex(filteredArray)].target];
+      options = [
+        !options.includes(filteredArray[getRandomIndex(filteredArray)].target) && filteredArray[getRandomIndex(filteredArray)].target,
+        !options.includes(filteredArray[getRandomIndex(filteredArray)].target) && filteredArray[getRandomIndex(filteredArray)].target,
+        !options.includes(filteredArray[getRandomIndex(filteredArray)].target) && filteredArray[getRandomIndex(filteredArray)].target,
+        !options.includes(filteredArray[getRandomIndex(filteredArray)].target) && filteredArray[getRandomIndex(filteredArray)].target,
+      ];
       options[getRandomIndex(options)] = array[questionIndex].target;
       return options;
     };
