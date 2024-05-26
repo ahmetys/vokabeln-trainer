@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function Question({ quiz, setQuiz, count, setCount }) {
   const [yourAnswer, setYourAnswer] = useState("");
-  console.log(yourAnswer);
+  console.log(quiz);
   const handleClick = () => {
     if (yourAnswer !== "") {
       setCount((prev) => prev + 1);

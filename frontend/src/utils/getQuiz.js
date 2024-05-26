@@ -5,26 +5,28 @@ const getQuiz = (array, limit) => {
 
   const createQuestion = () => {
     const questionIndex = getRandomIndex(filteredArray);
-
-    const options = () => {
-      let options = [];
-      options = [
-        !options.includes(filteredArray[getRandomIndex(filteredArray)].target) && filteredArray[getRandomIndex(filteredArray)].target,
-        !options.includes(filteredArray[getRandomIndex(filteredArray)].target) && filteredArray[getRandomIndex(filteredArray)].target,
-        !options.includes(filteredArray[getRandomIndex(filteredArray)].target) && filteredArray[getRandomIndex(filteredArray)].target,
-        !options.includes(filteredArray[getRandomIndex(filteredArray)].target) && filteredArray[getRandomIndex(filteredArray)].target,
-      ];
-      options[getRandomIndex(options)] = array[questionIndex].target;
-      return options;
-    };
-    const question = { question: filteredArray[questionIndex].source, answer: filteredArray[questionIndex].target, options: options() };
+    const question = { question: filteredArray[questionIndex].source, answer: filteredArray[questionIndex].target, options: [filteredArray[questionIndex].target] };
     filteredArray = filteredArray.filter((q, i) => i !== questionIndex);
-    console.log(filteredArray);
+    const createOptions = (array) => {
+      let filteredOptionArray = array;
+      const optionIndex = getRandomIndex(filteredOptionArray);
+      (function asd(arr, i) {
+        console.log(arr);
+        if (!question.options.includes(arr[i].target)) {
+          question.options.push(arr[i].target);
+          filteredOptionArray = filteredOptionArray.filter((q, i) => i !== optionIndex);
+        }
+        if (question.options < 4) {
+          console.log(0);
+          asd();
+        }
+      })asd(filteredOptionArray, optionIndex);
+    };
+    createOptions(filteredArray);
     quiz = [...quiz, question];
     quiz.length < limit && createQuestion();
   };
   createQuestion();
-  console.log(quiz);
   return quiz;
 };
 
