@@ -8,10 +8,10 @@ function QuizResults({ quiz, setQuiz, setCount }) {
     setQuiz(getQuiz(wordList, 5));
     setCount(0);
   };
-  const [results, setResults] = useState({ true: 0, false: 0 });
+  const [results, setResults] = useState(0);
   useEffect(() => {
     quiz.map((item) => {
-      item.answer === item.yourAnswer ? setResults({ ...results, true: results.true + 1 }) : setResults({ ...results, false: results.false + 1 });
+      item.target === item.yourAnswer ? setResults(results + 1) : setResults(results + 1);
     });
   }, []);
   return (
@@ -26,7 +26,7 @@ function QuizResults({ quiz, setQuiz, setCount }) {
         {
           <span>
             <strong>Richtig:</strong>
-            {results.true}
+            {results}
           </span>
         }
       </div>
@@ -34,7 +34,7 @@ function QuizResults({ quiz, setQuiz, setCount }) {
         {
           <span>
             <strong>Falsch:</strong>
-            {results.false}
+            {results}
           </span>
         }
       </div>

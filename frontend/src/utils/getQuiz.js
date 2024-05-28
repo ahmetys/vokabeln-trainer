@@ -1,32 +1,43 @@
-const getRandomIndex = (array) => (Array.isArray(array) ? Math.floor(Math.random() * (array.length - 1)) : new Error("is not an array"));
+const getRandomIndex = (arr, n = 1) => {
+  if (n > 1) {
+    let indexes = [];
+    for (let i = 0; i < n; i++) {
+      const getIndex = () => {
+        const index = Math.floor(Math.random() * (arr.length - 1));
+        if (indexes.includes(index)) {
+          getIndex();
+        } else {
+          indexes.push(index);
+        }
+      };
+      getIndex();
+    }
+    return indexes;
+  } else {
+    const index = Math.floor(Math.random() * arr.length);
+    return index;
+  }
+};
+const getOptions = (array, oindex) => {
+  let newArray = array.filter((item, index) => index !== oindex);
+  let options = [];
+  for (let i = 0; i < 4; i++) {
+    const optionIndex = getRandomIndex(newArray);
+    options = [...options, newArray[optionIndex].target];
+    newArray = newArray.filter((item, index) => index !== optionIndex);
+  }
+  return options;
+};
+
 const getQuiz = (array, limit) => {
   let quiz = [];
-  let filteredArray = array;
-
-  const createQuestion = () => {
-    const questionIndex = getRandomIndex(filteredArray);
-    const question = { question: filteredArray[questionIndex].source, answer: filteredArray[questionIndex].target, options: [filteredArray[questionIndex].target] };
-    filteredArray = filteredArray.filter((q, i) => i !== questionIndex);
-    const createOptions = (array) => {
-      let filteredOptionArray = array;
-      const optionIndex = getRandomIndex(filteredOptionArray);
-      (function asd(arr, i) {
-        console.log(arr);
-        if (!question.options.includes(arr[i].target)) {
-          question.options.push(arr[i].target);
-          filteredOptionArray = filteredOptionArray.filter((q, i) => i !== optionIndex);
-        }
-        if (question.options < 4) {
-          console.log(0);
-          asd();
-        }
-      })asd(filteredOptionArray, optionIndex);
-    };
-    createOptions(filteredArray);
-    quiz = [...quiz, question];
-    quiz.length < limit && createQuestion();
-  };
-  createQuestion();
+  array.map((item, index) => {
+    item.options = getOptions(array, index);
+    const optionIndex = getRandomIndex(item.options);
+    console.log(optionIndex);
+    item.options[optionIndex] = item.target;
+    quiz = [...quiz, item];
+  });
   return quiz;
 };
 

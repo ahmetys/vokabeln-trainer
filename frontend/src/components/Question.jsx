@@ -33,7 +33,7 @@ function Question({ quiz, setQuiz, count, setCount }) {
         </span>
       </div>
       <div>
-        <span dangerouslySetInnerHTML={{ __html: quiz[count].question }} />
+        <span dangerouslySetInnerHTML={{ __html: quiz[count].source }} />
         <hr />
       </div>
       <div>
