@@ -5,14 +5,17 @@ import { useWordList, useWordListDispatch } from "../WordListContext";
 function QuizResults({ quiz, setQuiz, setCount }) {
   const wordList = useWordList();
   const handleClick = () => {
-    setQuiz(getQuiz(wordList, 5));
     setCount(0);
+    setQuiz(getQuiz(wordList, 5));
   };
-  const [results, setResults] = useState(0);
+  const [results, setResults] = useState({ correct: 0, wrong: 0 });
   useEffect(() => {
+    let correct = 0;
+    let wrong = 0;
     quiz.map((item) => {
-      item.target === item.yourAnswer ? setResults(results + 1) : setResults(results + 1);
+      item.target === item.yourAnswer ? correct++ : wrong++;
     });
+    setResults({ correct: correct, wrong: wrong });
   }, []);
   return (
     <>
@@ -26,7 +29,7 @@ function QuizResults({ quiz, setQuiz, setCount }) {
         {
           <span>
             <strong>Richtig:</strong>
-            {results}
+            {results.correct}
           </span>
         }
       </div>
@@ -34,13 +37,13 @@ function QuizResults({ quiz, setQuiz, setCount }) {
         {
           <span>
             <strong>Falsch:</strong>
-            {results}
+            {results.wrong}
           </span>
         }
       </div>
       <div>
         <button onClick={handleClick} type="button" className="btn btn-primary">
-          Tekrar Basla
+          Erneut Starten
         </button>
       </div>
     </>

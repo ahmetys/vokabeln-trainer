@@ -17,7 +17,7 @@ function Question({ quiz, setQuiz, count, setCount }) {
         })
       );
     } else {
-      alert("check");
+      alert("Wählen Sie bitte eine Option aus!");
     }
   };
   const handleChange = (e) => {
