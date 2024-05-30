@@ -21,7 +21,7 @@ function QuizResults({ quiz, setQuiz, setCount }) {
     <>
       <div>
         <span>
-          <strong>Results</strong>
+          <strong>Quizergebnisse</strong>
         </span>
         <hr />
       </div>
