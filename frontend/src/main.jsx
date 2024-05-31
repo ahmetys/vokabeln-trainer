@@ -9,11 +9,14 @@ import { BrowserRouter } from "react-router-dom";
 import { WordListProvider } from "./WordListContext.jsx";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { UserProvider } from "./UserContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <WordListProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </WordListProvider>
+  <UserProvider>
+    <WordListProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </WordListProvider>
+  </UserProvider>
 );

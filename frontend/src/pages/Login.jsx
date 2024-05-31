@@ -1,8 +1,12 @@
+import { useUserDispatch } from "../UserContext";
+
 function Login() {
+  const dispatch = useUserDispatch();
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log(e.target.username.value);
+    dispatch({ type: "login", payload: { username: e.target.username.value, password: e.target.password.value } });
   };
+
   return (
     <div>
       <h1>Einloggen</h1>

@@ -5,8 +5,11 @@ import Cards from "./pages/Cards";
 import Quiz from "./pages/Quiz";
 import PrivateRoutes from "./PrivateRoutes";
 import PageNotFound from "./pages/PageNotFound";
+import { useUser } from "./UserContext";
 
 function AppRoutes() {
+  const isLoggedIn = useUser();
+  console.log(isLoggedIn);
   return (
     <>
       <Routes>
@@ -14,7 +17,7 @@ function AppRoutes() {
         <Route
           path="/"
           element={
-            <PrivateRoutes isLoggedIn={false}>
+            <PrivateRoutes isLoggedIn={isLoggedIn}>
               <Home />
             </PrivateRoutes>
           }
@@ -22,7 +25,7 @@ function AppRoutes() {
         <Route
           path="/cards"
           element={
-            <PrivateRoutes isLoggedIn={false}>
+            <PrivateRoutes isLoggedIn={isLoggedIn}>
               <Cards />
             </PrivateRoutes>
           }
@@ -30,7 +33,7 @@ function AppRoutes() {
         <Route
           path="/quiz"
           element={
-            <PrivateRoutes isLoggedIn={false}>
+            <PrivateRoutes isLoggedIn={isLoggedIn}>
               <Quiz />
             </PrivateRoutes>
           }
