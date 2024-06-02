@@ -8,7 +8,7 @@ import PageNotFound from "./pages/PageNotFound";
 import { useUser } from "./UserContext";
 
 function AppRoutes() {
-  const isLoggedIn = useUser();
+  let isLoggedIn = useUser();
   console.log(isLoggedIn);
   return (
     <>

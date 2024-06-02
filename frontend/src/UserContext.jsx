@@ -5,7 +5,6 @@ const UserDispatchContext = createContext(null);
 const initialState = { username: "user", password: "password", isLoggedIn: false };
 export function UserProvider({ children }) {
   const [user, dispatch] = useReducer(UserReducer, initialState);
-  console.log(user);
   return (
     <UserContext.Provider value={user.isLoggedIn}>
       <UserDispatchContext.Provider value={dispatch}>{children}</UserDispatchContext.Provider>
