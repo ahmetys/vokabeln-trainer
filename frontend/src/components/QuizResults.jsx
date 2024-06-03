@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getQuiz } from "../utils/getQuiz";
-import { useWordList, useWordListDispatch } from "../WordListContext";
+import { useWordList, useWordListDispatch } from "../context/WordListContext";
 
 function QuizResults({ quiz, setQuiz, setCount }) {
   const wordList = useWordList();

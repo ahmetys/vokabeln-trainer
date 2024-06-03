@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
-import { wordListReducer } from "./WordListReducer";
+import { wordListReducer } from "../reducer/WordListReducer";
 const WordListContext = createContext(null);
 const WordListDispatchContext = createContext(null);
 const initialWordList = localStorage.getItem("wordList") === null ? [] : JSON.parse(localStorage.getItem("wordList"));

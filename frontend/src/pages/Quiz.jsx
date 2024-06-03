@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useWordList, useWordListDispatch } from "../WordListContext";
+import { useWordList, useWordListDispatch } from "../context/WordListContext";
 import { getQuiz } from "../utils/getQuiz";
 import Question from "../components/Question";
 import QuizResults from "../components/QuizResults";

@@ -1,5 +1,5 @@
 import Slider from "react-slick";
-import { useWordList } from "../WordListContext";
+import { useWordList } from "../context/WordListContext";
 import Card from "../components/Card";
 function Cards() {
   const settings = {

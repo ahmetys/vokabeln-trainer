@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useWordListDispatch, useWordList } from "../WordListContext";
+import { useWordListDispatch, useWordList } from "../context/WordListContext";
 
 function FavoriteIcon({ source, target }) {
   const [isFavorited, setIsFavorited] = useState(false);

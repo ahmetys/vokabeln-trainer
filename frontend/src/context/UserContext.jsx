@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
-import { UserReducer } from "./UserReducer";
+import { UserReducer } from "../reducer/UserReducer";
 const UserContext = createContext(null);
 const UserDispatchContext = createContext(null);
 const initialState = { username: "user", password: "password", isLoggedIn: false };

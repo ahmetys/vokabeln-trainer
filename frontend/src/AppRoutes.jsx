@@ -5,7 +5,7 @@ import Cards from "./pages/Cards";
 import Quiz from "./pages/Quiz";
 import PrivateRoutes from "./PrivateRoutes";
 import PageNotFound from "./pages/PageNotFound";
-import { useUser } from "./UserContext";
+import { useUser } from "./context/UserContext";
 
 function AppRoutes() {
   let isLoggedIn = useUser();
