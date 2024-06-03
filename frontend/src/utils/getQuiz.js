@@ -34,7 +34,6 @@ const getQuiz = (array, limit) => {
   array.map((item, index) => {
     item.options = getOptions(array, index);
     const optionIndex = getRandomIndex(item.options);
-    console.log(optionIndex);
     item.options[optionIndex] = item.target;
     quiz = [...quiz, item];
   });

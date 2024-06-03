@@ -7,7 +7,6 @@ function Quiz() {
   const wordList = useWordList();
   const dispatch = useWordListDispatch();
   const [quiz, setQuiz] = useState(getQuiz(wordList, 5));
-  console.log(quiz);
   const [count, setCount] = useState(0);
   return <div className="px-2">{count > quiz.length - 1 ? <QuizResults quiz={quiz} setQuiz={setQuiz} setCount={setCount} /> : <Question key={count} quiz={quiz} setQuiz={setQuiz} count={count} setCount={setCount} />}</div>;
 }

@@ -9,7 +9,6 @@ import { useUser } from "./context/UserContext";
 
 function AppRoutes() {
   let isLoggedIn = useUser();
-  console.log(isLoggedIn);
   return (
     <>
       <Routes>

@@ -15,7 +15,6 @@ app.get("/", (req, res) => {
   res.send("Hellos Worsld!");
 });
 app.post("/", cors(), (req, res) => {
-  console.log(req.body);
   axios
     .get(`https://api.pons.com/v1/dictionary?q=${encodeURIComponent(req.body.searchTerm)}&l=detr`, {
       headers: {
@@ -27,7 +26,6 @@ app.post("/", cors(), (req, res) => {
       res.send(response.data);
     })
     .catch((error) => {
-      console.log(error);
       res.send(error);
     });
 });

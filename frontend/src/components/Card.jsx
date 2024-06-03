@@ -1,5 +1,3 @@
-import Flags from "./Flags";
-
 function Card({ word }) {
   return (
     <div className="card bg-primary-subtle mx-3 word-card">

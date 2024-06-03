@@ -33,7 +33,6 @@ function Search() {
         setSearchInput("");
       })
       .catch((error) => {
-        alert(error.message);
         console.log(error);
       });
   };

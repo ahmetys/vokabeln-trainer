@@ -7,7 +7,9 @@ export function UserReducer(user, action) {
         return user;
       }
       break;
-
+    case "logout":
+      return { ...user, isLoggedIn: false };
+      break;
     default:
       break;
   }
