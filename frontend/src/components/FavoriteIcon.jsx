@@ -30,7 +30,7 @@ function FavoriteIcon({ source, target }) {
     }
   }
   return (
-    <div>
+    <div className="d-flex justify-content-center">
       <i className={`bi fs-4 bi-heart${isFavorited ? "-fill text-danger" : ""}`} onClick={handleClick} role="button"></i>
     </div>
   );

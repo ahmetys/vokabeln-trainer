@@ -4,18 +4,16 @@ import { Navigate } from "react-router-dom";
 function Login() {
   const dispatch = useUserDispatch();
   const isLoggedIn = useUser();
-  console.log(isLoggedIn);
   const handleLogin = (e) => {
     e.preventDefault();
     dispatch({ type: "login", payload: { username: e.target.username.value, password: e.target.password.value } });
   };
   if (isLoggedIn) {
-    console.log(isLoggedIn);
     return <Navigate to="/" replace></Navigate>;
   }
 
   return (
-    <div>
+    <div className="px-2">
       <h1>Einloggen</h1>
       <form onSubmit={handleLogin}>
         <div className="mb-3">

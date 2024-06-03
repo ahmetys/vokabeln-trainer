@@ -40,9 +40,7 @@ function Question({ quiz, setQuiz, count, setCount }) {
           return (
             <div key={index} className="form-check mb-2">
               <input onChange={handleChange} value={item} className="form-check-input" type="radio" name="flexRadioDefault" id={`radio-${index}`} />
-              <label className="form-check-label" htmlFor={`radio-${index}`}>
-                {item}
-              </label>
+              <label dangerouslySetInnerHTML={{ __html: item }} className="form-check-label" htmlFor={`radio-${index}`}></label>
             </div>
           );
         })}
